@@ -199,20 +199,26 @@ def main():
         ["git", "add", "."],
         "Adding files to git"
     )
-    
+
+    # Get project directory name
+    project_dir = os.path.basename(os.getcwd())
+
     print("\n" + "=" * 60)
     print("✅ Project successfully created!")
     print("=" * 60)
-    print("\n📋 Next steps:")
-    print("1. Review and update .env file")
-    print("2. Create first migration:")
+    print("# 📋 Next steps:")
+    print("# 1. Go to the created directory")
+    print(f"   cd {project_dir}")
+    print("# 2. Review and update .env file")
+    print("   cp .env.example .env")
+    print("# 3. Create first migration:")
     print("   uv run alembic revision --autogenerate -m 'Initial migration'")
-    print("3. Apply migrations:")
+    print("# 4. Apply migrations:")
     print("   uv run alembic upgrade head")
-    print("4. Run the application:")
+    print("# 5. Run the application:")
     print("   uv run uvicorn main:app --reload")
-    print("\n📚 API documentation will be available at:")
-    print("   http://localhost:8000/docs")
+    print("\n# 📚 API documentation will be available at:")
+    print("#    http://localhost:8000/docs")
     print("=" * 60)
 
 
